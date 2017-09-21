@@ -17,6 +17,12 @@ BM.config(function ($stateProvider, $urlRouterProvider) {
 		//controller: 'loginController',
 		templateUrl: 'Scripts/Main/main.html',
 		url: ''
+		//template: '<h3>BM app!</h3>'
+	})
+
+	$stateProvider.state('house', {
+		templateUrl: 'Scripts/House/house.html',
+		url: '/house/:id'
 	})
 
 	var loginState = {
@@ -29,7 +35,7 @@ BM.config(function ($stateProvider, $urlRouterProvider) {
 	var aboutState = {
 		name: 'about',
 		url: '/about',
-		template: '<h3>BM app!</h3>'
+		templateUrl: 'Scripts/About/about.html'
 	}
 
 	//we can use nested states here 

@@ -18,13 +18,19 @@ angular.module('BM.controllers').
 		];
 
 		vm.houseClick = function (e, house) {
-			alert('house click : ' + house.id);
+			//alert('house click : ' + house.id);
+			$rootScope.$emit('BM.ChangeState', 'house', { id : house.id });
+			//$state.go('house', { id: house.id});
+
 		};
 
 		$rootScope.$on('BM.OnSuccessLogin', function () {
 			$state.go('/');
 		});
 
+		$rootScope.$on('BM.ChangeState', function (event, state, params) {
+			$state.go(state, params);
+		});
 		
 	}]);
 

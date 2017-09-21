@@ -1,0 +1,25 @@
+<div ng-controller="houseController as ctrl">
+	<md-list>
+		<md-subheader class="md-no-sticky">expences</md-subheader>
+		<md-list-item ng-repeat="expense in ctrl.expenses" ng-click="showExpense(expense)" class="noright">
+			<p>{{ expense.type }}</p>
+			<p>{{ expense.state }}</p>
+			<p>{{ expense.amount }}</p>
+			<p>{{ expense.description }}</p>
+			<p>{{ expense.dueDate }}</p>
+		</md-list-item>
+	</md-list>
+
+	<table>
+		<tr ng-repeat="expense in ctrl.expenses">
+			<td>{{ expense.id }}</td>
+			<td>{{ expense.type }}</td>
+			<td>{{ expense.amount }}</td>
+			<td>{{ expense.state }}</td>
+			<td>{{ expense.description }}</td>
+			<td>{{ expense.dueDate }}</td>
+		</tr>
+	</table>
+
+
+</div>
