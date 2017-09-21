@@ -1,0 +1,25 @@
+﻿<div ng-controller="mainController as ctrl" ng-cloak>
+	
+
+	<md-content class="md-padding" layout-xs="column" layout="row">
+		<div ng-repeat="complex in ctrl.complexes" flex-gt-xs="33" layout="column">
+			<md-card>
+				<img ng-src="{{complex.logoImage}}" class="md-card-image" alt="Washed Out">
+				<md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">{{complex.title}}</span>
+					</md-card-title-text>
+				</md-card-title>
+				<md-card-content>
+					<p>{{complex.description}}</p>
+				</md-card-content>
+				<md-card-actions layout="row" layout-align="end center">
+					<md-button>View Houses</md-button>
+				</md-card-actions>
+			</md-card>
+
+		</div>
+	</md-content>
+
+
+</div>
