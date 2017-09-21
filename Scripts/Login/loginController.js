@@ -1,13 +1,14 @@
 angular.module('BM.controllers').
-	controller('loginController', function ($scope) {
-
+	controller('loginController', function ($scope, $rootScope) {
 		var vm = this;
 
-		vm.username = "a";
+		vm.username = "";
 
-		vm.password = "b";
+		vm.password = "";
 
-
-
+		vm.loginClick = function () {
+			//alert('Logged in!');
+			$rootScope.$emit('BM.OnSuccessLogin');
+		};
 
 	});
