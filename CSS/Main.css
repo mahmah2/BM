@@ -7,6 +7,7 @@ table, th, td {
 	border: 1px solid grey;
 	border-collapse: collapse;
 	padding: 5px;
+	margin : 5px;
 }
 
 	table tr:nth-child(odd) {
@@ -16,3 +17,27 @@ table, th, td {
 	table tr:nth-child(even) {
 		background-color: #ffffff;
 	}
+
+	table tr td {
+		padding: 5px;
+		height: 50px;
+		margin: 5px;
+	}
+
+.bill-amount {
+	/*-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	overflow: hidden;
+	border: 2px solid rgba(29,0,255,1);
+	-webkit-border-radius: 20px;
+	border-radius: 20px;*/
+	color: rgb(143, 162, 255);
+	/*text-align: center;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	background: #168eff;
+	-webkit-box-shadow: 1px 1px 1px 0 rgb(128, 128, 128);
+	box-shadow: 1px 1px 1px 0 rgb(128, 128, 128);
+	text-shadow: 1px 1px 1px rgb(128, 128, 128);*/
+}

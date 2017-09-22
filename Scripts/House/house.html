@@ -1,25 +1,58 @@
 <div ng-controller="houseController as ctrl">
-	<md-list>
-		<md-subheader class="md-no-sticky">expences</md-subheader>
-		<md-list-item ng-repeat="expense in ctrl.expenses" ng-click="showExpense(expense)" class="noright">
-			<p>{{ expense.type }}</p>
-			<p>{{ expense.state }}</p>
-			<p>{{ expense.amount }}</p>
-			<p>{{ expense.description }}</p>
-			<p>{{ expense.dueDate }}</p>
-		</md-list-item>
-	</md-list>
 
-	<table>
-		<tr ng-repeat="expense in ctrl.expenses">
-			<td>{{ expense.id }}</td>
-			<td>{{ expense.type }}</td>
-			<td>{{ expense.amount }}</td>
-			<td>{{ expense.state }}</td>
-			<td>{{ expense.description }}</td>
-			<td>{{ expense.dueDate }}</td>
-		</tr>
-	</table>
+	<md-grid-list layout-fill flex
+				  md-cols-sm="1"
+				  md-cols-md="2"
+				  md-cols-gt-md="5"
+				  md-row-height="200px"
+				  md-gutter="8px"
+				  layout-margin>
+		<md-grid-tile ng-repeat="expense in ctrl.expenses">
+			<md-card layout-fill md-padding>
+				<md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">{{expense.type}}</span>
+						<div class="bill-amount">${{expense.amount}}</div>
+						<span class="md-subhead">{{expense.state}}</span>
+					</md-card-title-text>
+					<md-card-title-media>
+						<div class="md-media-sm card-media"></div>
+					</md-card-title-media>
+					<md-card-content>
+						<p>{{expense.description}}</p>
+					</md-card-content>
+				</md-card-title>
+				<md-card-actions layout="row" layout-align="end center">
+					<md-button ng-disabled=" expense.state == 'paid' " class="md-raised md-primary">Pay</md-button>
+				</md-card-actions>
+			</md-card>
+
+		</md-grid-tile>
+	</md-grid-list>
 
 
+	<md-content flex>
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Type</th>
+					<th>Amount</th>
+					<th>State</th>
+					<th>Description</th>
+					<th>Due Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="expense in ctrl.expenses">
+					<td>{{ expense.id }}</td>
+					<td>{{ expense.type }}</td>
+					<td>{{ expense.amount }}</td>
+					<td>{{ expense.state }}</td>
+					<td>{{ expense.description }}</td>
+					<td>{{ expense.dueDate }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</md-content>
 </div>
